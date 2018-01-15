@@ -1,0 +1,25 @@
+{
+  "name": "linuxtweets.com",
+  "version": "1.0.0",
+  "description": "Learn linux with handpicked tweets",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/babel app.js > app.min.js",
+    "start": "./node_modules/.bin/http-server",
+    "parcel": "./node_modules/.bin/parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "http-server": "^0.11.1",
+    "parcel-bundler": "^1.4.1"
+  }
+}
