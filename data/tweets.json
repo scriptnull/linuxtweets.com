@@ -1,0 +1,74 @@
+[
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Use pstree command to see your running processes as tree in <a href=\"https://twitter.com/hashtag/linux?src=hash&amp;ref_src=twsrc%5Etfw\">#linux</a> <a href=\"https://t.co/qExhS0BaYx\">pic.twitter.com/qExhS0BaYx</a></p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/949911946186260480?ref_src=twsrc%5Etfw\">January 7, 2018</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/949911946186260480"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Use file utility to know about your files on <a href=\"https://twitter.com/hashtag/linux?src=hash&amp;ref_src=twsrc%5Etfw\">#linux</a><br><br>$ file ~/twitter.txt<br>twitter.txt: ASCII text<br><br>$ file /dev<br>/dev: directory<br><br>$ file /sbin/init<br>/sbin/init: symbolic link to /lib/systemd/systemd</p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/947508058250285056?ref_src=twsrc%5Etfw\">December 31, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/947508058250285056"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Use man to learn about your favorite system call on <a href=\"https://twitter.com/hashtag/linux?src=hash&amp;ref_src=twsrc%5Etfw\">#linux</a><br><br>$ man 2 system-call-name</p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/947503039564279808?ref_src=twsrc%5Etfw\">December 31, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/947503039564279808"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">open<br>read<br>write<br>close<br>lseek<br>fcntl<br>dup<br>dup2<br>dup3<br>pread<br>pwrite<br>readv<br>writev<br>preadv<br>pwritev<br>truncate<br>ftruncate<br><br>so much fun! so much wow! <a href=\"https://twitter.com/hashtag/linux?src=hash&amp;ref_src=twsrc%5Etfw\">#linux</a></p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/947501358843772929?ref_src=twsrc%5Etfw\">December 31, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/947501358843772929"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">File descriptor 0 is stdin - standard input.<br>File descriptor 1 is stdout - standard output.<br>File descriptor 2 is stderr  - standard  error.<a href=\"https://twitter.com/hashtag/linux?src=hash&amp;ref_src=twsrc%5Etfw\">#linux</a></p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/947166377466519552?ref_src=twsrc%5Etfw\">December 30, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/947166377466519552"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">So, I did this as mentioned. In case if you are wondering how to do it. Here it is<br><br>$ echo &quot;hello&quot; &gt; target.txt<br>$ ln -s target.txt symlink<br>$ cat symlink<br>$ rm target.txt<br>$ cat symlink # tada 🎉 you have a dangling link <a href=\"https://t.co/xKzRDuOZDd\">https://t.co/xKzRDuOZDd</a></p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/942446681844416513?ref_src=twsrc%5Etfw\">December 17, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/942446681844416513"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">A process can exit due to two reasons <br><br>1) It calls _exit() system call and tells the kernel to terminate itself<br>2) By delivery of a signal<br><br>(( Planning to write down a program to demonstrate this and learn more about this ))<a href=\"https://twitter.com/hashtag/Linux?src=hash&amp;ref_src=twsrc%5Etfw\">#Linux</a></p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/941907622512410624?ref_src=twsrc%5Etfw\">December 16, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/941907622512410624"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">A process has a Process Identifier (PID) and a Parent Process Identifier (PPID)<br><br>$ ps -lax<a href=\"https://twitter.com/hashtag/Linux?src=hash&amp;ref_src=twsrc%5Etfw\">#Linux</a></p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/941904820713111552?ref_src=twsrc%5Etfw\">December 16, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/941904820713111552"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Me : my process is creating a new process<br><br>Kernel : No, my boy! Your process just requested me to create a new process for you. Here it is, go ahead and open my gift.<br><br>Me : can you also gift me a Linux T-shirt?<br><br>Kernel : Hell no! Go online and order it<a href=\"https://twitter.com/hashtag/linux?src=hash&amp;ref_src=twsrc%5Etfw\">#linux</a></p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/941691338092814336?ref_src=twsrc%5Etfw\">December 15, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/941691338092814336"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">All users in <a href=\"https://twitter.com/hashtag/linux?src=hash&amp;ref_src=twsrc%5Etfw\">#linux</a> have a User ID (UID)<br><br>Know your user id by checking /etc/passwd file.<br><br>User ID of root is always 0 (zero)</p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/941672595987894273?ref_src=twsrc%5Etfw\">December 15, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/941672595987894273"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Portable filename character set is [-._a-zA-Z0-9]<br><br>Try to use these 65 characters while naming your files on <a href=\"https://twitter.com/hashtag/linux?src=hash&amp;ref_src=twsrc%5Etfw\">#linux</a></p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/941010545301491719?ref_src=twsrc%5Etfw\">December 13, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/941010545301491719"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Every directory contains at least two links<br><br>. (dot) - link to the directory itself<br>.. (dot dot) - link to the parent directory<br><br>Every directory except root directory has a parent. So .. (dot dot) in root directory refers to itself.<a href=\"https://twitter.com/hashtag/Linux?src=hash&amp;ref_src=twsrc%5Etfw\">#Linux</a></p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/941008941990887424?ref_src=twsrc%5Etfw\">December 13, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/941008941990887424"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">A file can be one of the following types in <a href=\"https://twitter.com/hashtag/Linux?src=hash&amp;ref_src=twsrc%5Etfw\">#Linux</a><br><br>1) regular/plain file<br>2) device<br>3) pipe<br>4) socket<br>5) directory<br>6) symbolic link<br><br>Speaking of which I remember fs.Stats providing synchronous functions for checking the type of a file in node.js <a href=\"https://t.co/2JZJURkGpG\">pic.twitter.com/2JZJURkGpG</a></p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/940943395614101504?ref_src=twsrc%5Etfw\">December 13, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/940943395614101504"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Find all the users on a <a href=\"https://twitter.com/hashtag/linux?src=hash&amp;ref_src=twsrc%5Etfw\">#linux</a> machine using<br>$ sudo cat /etc/passwd <br><br>Find all the groups on a <a href=\"https://twitter.com/hashtag/linux?src=hash&amp;ref_src=twsrc%5Etfw\">#linux</a> machine using<br>$ sudo cat /etc/group</p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/940938813039304704?ref_src=twsrc%5Etfw\">December 13, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/940938813039304704"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">/boot/vmlinuz<br><br>This is haunting me from last night.</p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/938252505720406016?ref_src=twsrc%5Etfw\">December 6, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/938252505720406016"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Interesting origin of Zsh <a href=\"https://t.co/gTZ26GvcW8\">pic.twitter.com/gTZ26GvcW8</a></p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/938259136050954240?ref_src=twsrc%5Etfw\">December 6, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/938259136050954240"
+  },
+  {
+    "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">GNU stands for &quot;GNU&#39;s Not UNIX&quot;, which makes it a recursive acronym.<br><br>Wow, I just knew this today morning :D</p>&mdash; Vishnu Bharathi (@scriptnull) <a href=\"https://twitter.com/scriptnull/status/937715887259377664?ref_src=twsrc%5Etfw\">December 4, 2017</a></blockquote>\n",
+    "url": "https://twitter.com/scriptnull/status/937715887259377664"
+  },
+  {
+    "html": "",
+    "url": ""
+  }
+]
