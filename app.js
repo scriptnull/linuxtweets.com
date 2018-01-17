@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import _ from 'underscore';
+import {tweets} from './tweets.json';
 
 const TwitterOEmbedEndpoint = 'https://publish.twitter.com/oembed';
 
@@ -39,25 +41,14 @@ class TweetBoard extends React.Component {
 
 class App extends React.Component {
   static getAllTweets() {
-    return [
-      '949911946186260480',
-      '947508058250285056',
-      '947503039564279808',
-      '947501358843772929',
-      '947166377466519552',
-      '942446681844416513',
-      '941907622512410624',
-      '941904820713111552',
-      '941691338092814336',
-      '941672595987894273',
-      '941010545301491719',
-      '941008941990887424',
-      '940943395614101504',
-      '940938813039304704',
-      '938252505720406016',
-      '938259136050954240',
-      '937715887259377664',
-    ];
+    return _.map(
+      _.shuffle(tweets),
+      (tweet) => {
+        let urlParts = tweet.url.split('/');
+        let id = urlParts[urlParts.length - 1];
+        return id;
+      }
+    );
   }
   constructor(props) {
     super(props);
