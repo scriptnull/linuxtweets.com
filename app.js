@@ -5,22 +5,6 @@ import {tweets} from './tweets.json';
 
 const TwitterOEmbedEndpoint = 'https://publish.twitter.com/oembed';
 
-function Header(props) {
-  return (
-    <header>
-      <h1>{props.title}</h1>
-    </header>
-  );
-}
-
-function Footer(props) {
-  return (
-    <footer>
-      Built with &lt;3 by <a href="https://github.com/scriptnull">@scriptnull</a>
-    </footer>
-  )
-}
-
 class TweetBoard extends React.Component {
   componentDidMount() {
     this.createTweet(this.props.tweet);
@@ -68,10 +52,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header title="linuxtweets" />
         <TweetBoard tweet={App.getAllTweets()[this.state.tweetIndex]} />
         <button onClick={this.nextTweet.bind(this)}>Next Tweet</button>
-        <Footer />
       </div>
     )
   }
@@ -79,5 +61,5 @@ class App extends React.Component {
 
 ReactDOM.render(
   <App />,
-  document.getElementById('root')
+  document.getElementById('app')
 );
