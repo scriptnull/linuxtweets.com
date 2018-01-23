@@ -15,7 +15,7 @@ class TweetBoard extends React.Component {
   createTweet(id) {
     this.tweetDiv.innerHTML = '';
     if (window.twttr) {
-      window.twttr.widgets.createTweet(id, this.tweetDiv, { theme: 'dark'});
+      window.twttr.widgets.createTweet(id, this.tweetDiv, {});
     }
   }
   render() {
