@@ -39,12 +39,12 @@ A copy of the below checklist could be obtained from https://github.com/scriptnu
 - [ ] Create a LICENSE file (choose one before)
 - [ ] Create a CODE_OF_CONDUCT.md
 - [ ] Create a CONTRIBUTING.md
-- [ ] Create a .gitignore
+- [x] Create a .gitignore
 - [ ] Create [Gitter](https://gitter.im) chatroom (if needed)
 
 ## README.md Checklist
-- [ ] Title
-- [ ] Logo
+- [x] Title
+- [x] Logo
 - [ ] Badges
 - [ ] Description
 - [ ] Prerequisite for using software ( if any )
