@@ -26,7 +26,7 @@ class TweetBoard extends React.Component {
 class App extends React.Component {
   static getAllTweets() {
     return _.map(
-      _.shuffle(tweets),
+      tweets,
       (tweet) => {
         let urlParts = tweet.url.split('/');
         let id = urlParts[urlParts.length - 1];
