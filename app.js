@@ -15,7 +15,7 @@ class TweetBoard extends React.Component {
   createTweet(id) {
     this.tweetDiv.innerHTML = '';
     if (window.twttr) {
-      window.twttr.widgets.createTweet(id, this.tweetDiv, {});
+      window.twttr.widgets.createTweet(id, this.tweetDiv, {theme: 'dark'});
     }
   }
   render() {
@@ -52,8 +52,14 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <span className="intro">Linux lessons from curated tweets</span><br/>
-        <button onClick={this.nextTweet.bind(this)}>Next Tweet</button>
+        <br />
+          <span className="intro">
+            Linux lessons from curated tweets
+          </span>
+        <br/>
+        <a onClick={this.nextTweet.bind(this)} href="#">Previous</a>
+        &nbsp;
+        <a onClick={this.nextTweet.bind(this)} href="#">Next</a>
         <TweetBoard tweet={App.getAllTweets()[this.state.tweetIndex]} />
       </div>
     )
