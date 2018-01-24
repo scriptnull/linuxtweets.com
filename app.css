@@ -6,6 +6,18 @@ header {
   text-align: center;
 }
 
+.app {
+  text-align: center;
+}
+
+.intro {
+  font-weight: bolder;
+}
+
 twitterwidget {
   margin: 0 auto;
+}
+
+body {
+  font-family: monospace;
 }

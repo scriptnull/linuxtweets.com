@@ -52,8 +52,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <TweetBoard tweet={App.getAllTweets()[this.state.tweetIndex]} />
+        <span className="intro">Linux lessons from curated tweets</span><br/>
         <button onClick={this.nextTweet.bind(this)}>Next Tweet</button>
+        <TweetBoard tweet={App.getAllTweets()[this.state.tweetIndex]} />
       </div>
     )
   }
