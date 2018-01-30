@@ -4,9 +4,8 @@
   "description": "Linux lessons from curated tweets",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/babel app.js > app.min.js",
-    "start": "./node_modules/.bin/http-server",
     "parcel": "./node_modules/.bin/parcel index.html",
+    "production": "./node_modules/.bin/parcel build index.html --out-dir docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
