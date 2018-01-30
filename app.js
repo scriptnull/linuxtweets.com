@@ -41,6 +41,7 @@ class App extends React.Component {
     };
   }
   nextTweet() {
+    if (this.state.tweetIndex === tweets.length - 1) return
     this.setState(
       (prevState) => {
         return {
@@ -48,6 +49,16 @@ class App extends React.Component {
         }
       }
     );
+  }
+  previousTweet() {
+    if (this.state.tweetIndex === 0) return
+    this.setState(
+      (prevState) => {
+        return {
+          tweetIndex: prevState.tweetIndex - 1
+        }
+      }
+    )
   }
   render() {
     return (
@@ -57,9 +68,11 @@ class App extends React.Component {
             Linux lessons from curated tweets
           </span>
         <br/>
-        <a onClick={this.nextTweet.bind(this)} href="#">Previous</a>
+        <a onClick={this.previousTweet.bind(this)} href="#">Previous</a>
         &nbsp;
         <a onClick={this.nextTweet.bind(this)} href="#">Next</a>
+        <br />
+        <span>({this.state.tweetIndex + 1}/{tweets.length})</span>
         <TweetBoard tweet={App.getAllTweets()[this.state.tweetIndex]} />
       </div>
     )
