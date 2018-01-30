@@ -36,26 +36,49 @@ class App extends React.Component {
   }
   constructor(props) {
     super(props);
+
     this.state = {
-      tweetIndex: 0
+      tweetIndex: (parseInt(localStorage.getItem('com.linuxtweets.tweetIndex')) || -1) + 1
     };
+
+    if (this.state.tweetIndex >= tweets.length)
+      this.state.tweetIndex = 0
+
+    // save current tweetIndex for incrementing on next load
+    localStorage.setItem('com.linuxtweets.tweetIndex', this.state.tweetIndex)
   }
   nextTweet() {
     if (this.state.tweetIndex === tweets.length - 1) return
+
     this.setState(
       (prevState) => {
+        // compute index of next tweet
+        const newIndex = prevState.tweetIndex + 1
+
+        // store it in localStorage
+        localStorage.setItem('com.linuxtweets.tweetIndex', newIndex)
+
+        // update state
         return {
-          tweetIndex: prevState.tweetIndex + 1
+          tweetIndex: newIndex
         }
       }
     );
   }
   previousTweet() {
     if (this.state.tweetIndex === 0) return
+
     this.setState(
       (prevState) => {
+        // compute index of next tweet
+        const newIndex = prevState.tweetIndex - 1
+
+        // store it in localStorage
+        localStorage.setItem('com.linuxtweets.tweetIndex', newIndex)
+
+        // update state
         return {
-          tweetIndex: prevState.tweetIndex - 1
+          tweetIndex: newIndex
         }
       }
     )
