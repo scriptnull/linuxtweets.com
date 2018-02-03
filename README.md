@@ -11,6 +11,8 @@
 
 Linux lessons from curated tweets.
 
+![image](https://user-images.githubusercontent.com/4211715/35772305-81d6987e-0961-11e8-9483-fa684d3b0935.png)
+
 ### Contributing
 Please check [CONTRIBUTING.md](https://github.com/scriptnull/linuxtweets.com/blob/master/CONTRIBUTING.md) if you are interested in contributing.
 
