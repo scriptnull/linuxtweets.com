@@ -1,9 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {tweets} from '../tweets.json'
-import TweetEmbed from 'react-tweet-embed'
+
 import SequentialJsonDataSource from '../data-sources/sequential-json.js'
 import extractTweetId from '../utils/extractTweetId.js'
+
+import {tweets} from '../tweets.json'
+
+import Footer from './footer.js'
+import TweetEmbed from 'react-tweet-embed'
 
 class App extends React.Component {
   constructor (props) {
@@ -33,7 +37,7 @@ class App extends React.Component {
     document.addEventListener('keydown', this.onKeyBoardShortcut)
   }
   componentWillUnmount () {
-    document.removeEventListener('keydown')
+    document.removeEventListener('keydown', this.onKeyBoardShortcut)
   }
   previousTweet () {
     this.setState(
@@ -86,17 +90,20 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <br />
-        <span className='intro'>
-            Linux lessons from curated tweets
-          </span>
-        <br />
-        <a onClick={this.previousTweet} href='#'>&lt;==</a>
-        &nbsp;
-        <a onClick={this.nextTweet} href='#'>==&gt;</a>
-        <br />
-        <span>({this.state.tweetNowAt}/{this.state.totalTweets})</span>
-        <TweetEmbed id={this.state.tweetId} options={this.state.tweetBoardOpts} />
+        <div className='app'>
+          <br />
+          <span className='intro'>
+              Linux lessons from curated tweets
+            </span>
+          <br />
+          <a onClick={this.previousTweet} href='#'>&lt;==</a>
+          &nbsp;
+          <a onClick={this.nextTweet} href='#'>==&gt;</a>
+          <br />
+          <span>({this.state.tweetNowAt}/{this.state.totalTweets})</span>
+          <TweetEmbed id={this.state.tweetId} options={this.state.tweetBoardOpts} />
+        </div>
+        <Footer />
       </div>
     )
   }
