@@ -36,7 +36,7 @@ A copy of the below checklist could be obtained from https://github.com/scriptnu
 > https://github.com/scriptnull/linuxtweets.com
 
 - [ ] Create a README.md (check below for more)
-- [ ] Create a LICENSE file (choose one before)
+- [x] Create a LICENSE file (choose one before)
 - [x] Create a CODE_OF_CONDUCT.md
 - [x] Create a CONTRIBUTING.md
 - [x] Create a .gitignore
@@ -46,7 +46,7 @@ A copy of the below checklist could be obtained from https://github.com/scriptnu
 ## README.md Checklist
 - [x] Title
 - [x] Logo
-- [ ] Badges
+- [x] Badges
 - [ ] Description
 - [ ] Prerequisite for using software ( if any )
 - [ ] Install
@@ -66,15 +66,15 @@ A copy of the below checklist could be obtained from https://github.com/scriptnu
     - [ ] Share [keybase](https://keybase.io/) profile for making the reporting process easier.
 
 ## Coding Phase
-- [ ] Install required developer tools
+- [x] Install required developer tools
     - Compiler
     - Linter
     - Formatter
     - Build Tool
     - Other
-- [ ] Basic code complete
+- [x] Basic code complete
 - [ ] Write tests and keep watch on code coverage
-- [ ] Setup CI
+- [x] Setup CI
     - [AppVeyor](https://www.appveyor.com/) - CI/CD for Windows developers.
     - [CircleCI](https://circleci.com/) - Docker-based building with support of customized workflows.
     - [Codefresh](https://codefresh.io/) - Docker-native CI/CD.
@@ -85,18 +85,23 @@ A copy of the below checklist could be obtained from https://github.com/scriptnu
     - [Semaphore](https://semaphoreci.com/) - Fast automated CI/CD.
     - [Shippable](https://www.shippable.com/) - DevOps automation.
     - [Travis-CI](https://travis-ci.org/) - Automated CI/CD for Open Source.
-- [ ] Host the documentation of the code somewhere if the project is a software library
-- [ ] Use Github issues ( or other tools ) for tracking backlogs
-- [ ] Encourage OSS culture by having labels like "help wanted" "easy-to-contribute" etc.
-- [ ] Contribute to other OSS projects on which the current project is dependent on ( if possible )
+- [x] Host the documentation of the code somewhere if the project is a software library
+> not need for documentation
+
+- [x] Use Github issues ( or other tools ) for tracking backlogs
+- [x] Encourage OSS culture by having labels like "help wanted" "easy-to-contribute" etc.
+- [x] Contribute to other OSS projects on which the current project is dependent on ( if possible )
     - File bug reports
     - Improve docs
     - Suggest feature
     - Learn by reading code
+> https://github.com/capaj/react-tweet-embed/pull/20
 
 ## Release Phase
-- [ ] Package software in CI or manually in local
-- [ ] Publish in registries (npm, docker hub etc.) or markets (Android store, App Store etc.)
+- [x] Package software in CI or manually in local
+- [x] Publish in registries (npm, docker hub etc.) or markets (Android store, App Store etc.)
+>  Using github pages to host the site
+
 - [ ] Create the release version, description, link for downloading the release etc. in release page ( example: Github release page)
 
 ## Post-release
