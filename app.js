@@ -18,6 +18,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    this.previousTweet = this.previousTweet.bind(this)
+    this.nextTweet = this.nextTweet.bind(this)
+
     this.state = {
       tweetIndex: (parseInt(localStorage.getItem('com.linuxtweets.tweetIndex')) || -1) + 1
     };
@@ -27,24 +30,6 @@ class App extends React.Component {
 
     // save current tweetIndex for incrementing on next load
     localStorage.setItem('com.linuxtweets.tweetIndex', this.state.tweetIndex)
-  }
-  nextTweet() {
-    if (this.state.tweetIndex === tweets.length - 1) return
-
-    this.setState(
-      (prevState) => {
-        // compute index of next tweet
-        const newIndex = prevState.tweetIndex + 1
-
-        // store it in localStorage
-        localStorage.setItem('com.linuxtweets.tweetIndex', newIndex)
-
-        // update state
-        return {
-          tweetIndex: newIndex
-        }
-      }
-    );
   }
   previousTweet() {
     if (this.state.tweetIndex === 0) return
@@ -64,6 +49,24 @@ class App extends React.Component {
       }
     )
   }
+  nextTweet() {
+    if (this.state.tweetIndex === tweets.length - 1) return
+
+    this.setState(
+      (prevState) => {
+        // compute index of next tweet
+        const newIndex = prevState.tweetIndex + 1
+
+        // store it in localStorage
+        localStorage.setItem('com.linuxtweets.tweetIndex', newIndex)
+
+        // update state
+        return {
+          tweetIndex: newIndex
+        }
+      }
+    );
+  }
   render() {
     return (
       <div>
@@ -72,9 +75,9 @@ class App extends React.Component {
             Linux lessons from curated tweets
           </span>
         <br/>
-        <a onClick={this.previousTweet.bind(this)} href="#">Previous</a>
+        <a onClick={this.previousTweet} href="#">&lt;==</a>
         &nbsp;
-        <a onClick={this.nextTweet.bind(this)} href="#">Next</a>
+        <a onClick={this.nextTweet} href="#">==&gt;</a>
         <br />
         <span>({this.state.tweetIndex + 1}/{tweets.length})</span>
         <TweetEmbed id={App.getAllTweets()[this.state.tweetIndex]} />
