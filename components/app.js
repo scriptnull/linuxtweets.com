@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import _ from 'underscore'
 import {tweets} from '../tweets.json'
 import TweetEmbed from './tweet-embed.js'
+import SequentialJsonDataSource from '../data-sources/sequential-json.js'
 
 let extractTweetId = (tweet) => {
   let urlParts = tweet.url.split('/')
@@ -20,47 +21,51 @@ class App extends React.Component {
     this.previousTweet = this.previousTweet.bind(this)
     this.nextTweet = this.nextTweet.bind(this)
 
+    this.dataSource = new SequentialJsonDataSource(tweets,
+      {
+        storage: window.localStorage,
+        circular: true
+      }
+    )
+
     this.state = {
-      tweetIndex: (parseInt(window.localStorage.getItem('com.linuxtweets.tweetIndex')) || -1) + 1
+      tweetNowAt: this.dataSource.nowAt(),
+      totalTweets: this.dataSource.total(),
+      tweetId: extractTweetId(this.dataSource.current())
     }
-
-    if (this.state.tweetIndex >= tweets.length) { this.state.tweetIndex = 0 }
-
-    // save current tweetIndex for incrementing on next load
-    window.localStorage.setItem('com.linuxtweets.tweetIndex', this.state.tweetIndex)
   }
   previousTweet () {
-    if (this.state.tweetIndex === 0) return
-
     this.setState(
       (prevState) => {
-        // compute index of next tweet
-        const newIndex = prevState.tweetIndex - 1
+        let tweet = this.dataSource.previous()
 
-        // store it in window.localStorage
-        window.localStorage.setItem('com.linuxtweets.tweetIndex', newIndex)
+        if (!tweet) {
+          this.dataSource.reset()
+          tweet = this.dataSource.current()
+        }
 
         // update state
         return {
-          tweetIndex: newIndex
+          tweetNowAt: this.dataSource.nowAt(),
+          tweetId: extractTweetId(tweet)
         }
       }
     )
   }
   nextTweet () {
-    if (this.state.tweetIndex === tweets.length - 1) return
-
     this.setState(
       (prevState) => {
-        // compute index of next tweet
-        const newIndex = prevState.tweetIndex + 1
+        let tweet = this.dataSource.next()
 
-        // store it in window.localStorage
-        window.localStorage.setItem('com.linuxtweets.tweetIndex', newIndex)
+        if (!tweet) {
+          this.dataSource.reset()
+          tweet = this.dataSource.current()
+        }
 
         // update state
         return {
-          tweetIndex: newIndex
+          tweetNowAt: this.dataSource.nowAt(),
+          tweetId: extractTweetId(tweet)
         }
       }
     )
@@ -77,8 +82,8 @@ class App extends React.Component {
         &nbsp;
         <a onClick={this.nextTweet} href='#'>==&gt;</a>
         <br />
-        <span>({this.state.tweetIndex + 1}/{tweets.length})</span>
-        <TweetEmbed id={App.getAllTweets()[this.state.tweetIndex]} />
+        <span>({this.state.tweetNowAt}/{this.state.totalTweets})</span>
+        <TweetEmbed id={this.state.tweetId} />
       </div>
     )
   }
