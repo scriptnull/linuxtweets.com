@@ -3,12 +3,7 @@ import ReactDOM from 'react-dom'
 import {tweets} from '../tweets.json'
 import TweetEmbed from 'react-tweet-embed'
 import SequentialJsonDataSource from '../data-sources/sequential-json.js'
-
-let extractTweetId = (tweet) => {
-  let urlParts = tweet.url.split('/')
-  let id = urlParts[urlParts.length - 1]
-  return id
-}
+import extractTweetId from '../utils/extractTweetId.js'
 
 class App extends React.Component {
   constructor (props) {
