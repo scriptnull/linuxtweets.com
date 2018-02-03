@@ -4,16 +4,15 @@ import _ from 'underscore'
 import {tweets} from '../tweets.json'
 import TweetEmbed from './tweet-embed.js'
 
+let extractTweetId = (tweet) => {
+  let urlParts = tweet.url.split('/')
+  let id = urlParts[urlParts.length - 1]
+  return id
+}
+
 class App extends React.Component {
   static getAllTweets () {
-    return _.map(
-      tweets,
-      (tweet) => {
-        let urlParts = tweet.url.split('/')
-        let id = urlParts[urlParts.length - 1]
-        return id
-      }
-    )
+    return _.map(tweets, extractTweetId)
   }
   constructor (props) {
     super(props)
