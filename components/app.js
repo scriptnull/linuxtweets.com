@@ -26,6 +26,12 @@ class App extends React.Component {
       tweetId: extractTweetId(this.dataSource.current())
     }
   }
+  componentWillMount () {
+    document.addEventListener('keydown', this.onKeyBoardShortcut)
+  }
+  componentWillUnmount () {
+    document.removeEventListener('keydown')
+  }
   previousTweet () {
     this.setState(
       (prevState) => {
@@ -63,7 +69,6 @@ class App extends React.Component {
     )
   }
   onKeyBoardShortcut (event) {
-    console.log(event.key)
     switch (event.key) {
       case 'ArrowLeft':
         this.previousTweet()
@@ -77,10 +82,7 @@ class App extends React.Component {
   }
   render () {
     return (
-      <div
-        tabIndex='0'
-        onKeyDown={this.onKeyBoardShortcut}
-        >
+      <div>
         <br />
         <span className='intro'>
             Linux lessons from curated tweets
