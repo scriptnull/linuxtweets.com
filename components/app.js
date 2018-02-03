@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import _ from 'underscore'
 import {tweets} from '../tweets.json'
-import TweetEmbed from './tweet-embed.js'
+import TweetEmbed from 'react-tweet-embed'
 import SequentialJsonDataSource from '../data-sources/sequential-json.js'
 
 let extractTweetId = (tweet) => {
