@@ -2,26 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'underscore';
 import {tweets} from './tweets.json';
-
-const TwitterOEmbedEndpoint = 'https://publish.twitter.com/oembed';
-
-class TweetBoard extends React.Component {
-  componentDidMount() {
-    this.createTweet(this.props.tweet);
-  }
-  componentWillUpdate(nextProps, nextState) {
-    this.createTweet(nextProps.tweet);
-  }
-  createTweet(id) {
-    this.tweetDiv.innerHTML = '';
-    if (window.twttr) {
-      window.twttr.widgets.createTweet(id, this.tweetDiv, {theme: 'dark'});
-    }
-  }
-  render() {
-    return <div ref={(tweetDiv) => { this.tweetDiv = tweetDiv }}></div>;
-  }
-}
+import TweetEmbed from './tweet-embed.js'
 
 class App extends React.Component {
   static getAllTweets() {
@@ -96,7 +77,7 @@ class App extends React.Component {
         <a onClick={this.nextTweet.bind(this)} href="#">Next</a>
         <br />
         <span>({this.state.tweetIndex + 1}/{tweets.length})</span>
-        <TweetBoard tweet={App.getAllTweets()[this.state.tweetIndex]} />
+        <TweetEmbed id={App.getAllTweets()[this.state.tweetIndex]} />
       </div>
     )
   }
