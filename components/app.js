@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import _ from 'underscore'
 import {tweets} from '../tweets.json'
 import TweetEmbed from 'react-tweet-embed'
 import SequentialJsonDataSource from '../data-sources/sequential-json.js'
@@ -12,9 +11,6 @@ let extractTweetId = (tweet) => {
 }
 
 class App extends React.Component {
-  static getAllTweets () {
-    return _.map(tweets, extractTweetId)
-  }
   constructor (props) {
     super(props)
 
