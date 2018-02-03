@@ -23,7 +23,10 @@ class App extends React.Component {
     this.state = {
       tweetNowAt: this.dataSource.nowAt(),
       totalTweets: this.dataSource.total(),
-      tweetId: extractTweetId(this.dataSource.current())
+      tweetId: extractTweetId(this.dataSource.current()),
+      tweetBoardOpts: {
+        theme: 'dark'
+      }
     }
   }
   componentWillMount () {
@@ -93,7 +96,7 @@ class App extends React.Component {
         <a onClick={this.nextTweet} href='#'>==&gt;</a>
         <br />
         <span>({this.state.tweetNowAt}/{this.state.totalTweets})</span>
-        <TweetEmbed id={this.state.tweetId} />
+        <TweetEmbed id={this.state.tweetId} options={this.state.tweetBoardOpts} />
       </div>
     )
   }
