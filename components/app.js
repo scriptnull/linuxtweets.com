@@ -11,6 +11,7 @@ class App extends React.Component {
 
     this.previousTweet = this.previousTweet.bind(this)
     this.nextTweet = this.nextTweet.bind(this)
+    this.onKeyBoardShortcut = this.onKeyBoardShortcut.bind(this)
 
     this.dataSource = new SequentialJsonDataSource(tweets,
       {
@@ -61,9 +62,25 @@ class App extends React.Component {
       }
     )
   }
+  onKeyBoardShortcut (event) {
+    console.log(event.key)
+    switch (event.key) {
+      case 'ArrowLeft':
+        this.previousTweet()
+        break
+      case 'ArrowRight':
+        this.nextTweet()
+        break
+      default:
+        break
+    }
+  }
   render () {
     return (
-      <div>
+      <div
+        tabIndex='0'
+        onKeyDown={this.onKeyBoardShortcut}
+        >
         <br />
         <span className='intro'>
             Linux lessons from curated tweets

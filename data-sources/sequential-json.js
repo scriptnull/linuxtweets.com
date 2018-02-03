@@ -18,7 +18,7 @@ export default class SequentialJsonDataSource {
     this.circular = false
 
     if (_.isBoolean(circular)) {
-      this.circular = true
+      this.circular = circular
     }
 
     // use getters and setter to access this.dataIndex at all places
@@ -29,7 +29,9 @@ export default class SequentialJsonDataSource {
     if (this.storage) {
       let tweetIndexLastAt = parseInt(this.storage.getItem('tweetIndexLastAt'))
       if (_.isFinite(tweetIndexLastAt)) {
-        seed = tweetIndexLastAt + 1
+        if (this.hasTweet(tweetIndexLastAt + 1)) {
+          seed = tweetIndexLastAt + 1
+        }
       }
     }
 
@@ -38,7 +40,7 @@ export default class SequentialJsonDataSource {
 
   setIndex (index) {
     if (!this.hasTweet(index)) {
-      throw new Error('Out of Range Exception')
+      throw new Error('Out Of Bounds Exception : index = ' + index)
     }
 
     this.dataIndex = index
