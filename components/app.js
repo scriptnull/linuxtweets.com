@@ -1,37 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import _ from 'underscore';
-import {tweets} from './tweets.json';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import _ from 'underscore'
+import {tweets} from '../tweets.json'
 import TweetEmbed from './tweet-embed.js'
 
 class App extends React.Component {
-  static getAllTweets() {
+  static getAllTweets () {
     return _.map(
       tweets,
       (tweet) => {
-        let urlParts = tweet.url.split('/');
-        let id = urlParts[urlParts.length - 1];
-        return id;
+        let urlParts = tweet.url.split('/')
+        let id = urlParts[urlParts.length - 1]
+        return id
       }
-    );
+    )
   }
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
     this.previousTweet = this.previousTweet.bind(this)
     this.nextTweet = this.nextTweet.bind(this)
 
     this.state = {
-      tweetIndex: (parseInt(localStorage.getItem('com.linuxtweets.tweetIndex')) || -1) + 1
-    };
+      tweetIndex: (parseInt(window.localStorage.getItem('com.linuxtweets.tweetIndex')) || -1) + 1
+    }
 
-    if (this.state.tweetIndex >= tweets.length)
-      this.state.tweetIndex = 0
+    if (this.state.tweetIndex >= tweets.length) { this.state.tweetIndex = 0 }
 
     // save current tweetIndex for incrementing on next load
-    localStorage.setItem('com.linuxtweets.tweetIndex', this.state.tweetIndex)
+    window.localStorage.setItem('com.linuxtweets.tweetIndex', this.state.tweetIndex)
   }
-  previousTweet() {
+  previousTweet () {
     if (this.state.tweetIndex === 0) return
 
     this.setState(
@@ -39,8 +38,8 @@ class App extends React.Component {
         // compute index of next tweet
         const newIndex = prevState.tweetIndex - 1
 
-        // store it in localStorage
-        localStorage.setItem('com.linuxtweets.tweetIndex', newIndex)
+        // store it in window.localStorage
+        window.localStorage.setItem('com.linuxtweets.tweetIndex', newIndex)
 
         // update state
         return {
@@ -49,7 +48,7 @@ class App extends React.Component {
       }
     )
   }
-  nextTweet() {
+  nextTweet () {
     if (this.state.tweetIndex === tweets.length - 1) return
 
     this.setState(
@@ -57,27 +56,27 @@ class App extends React.Component {
         // compute index of next tweet
         const newIndex = prevState.tweetIndex + 1
 
-        // store it in localStorage
-        localStorage.setItem('com.linuxtweets.tweetIndex', newIndex)
+        // store it in window.localStorage
+        window.localStorage.setItem('com.linuxtweets.tweetIndex', newIndex)
 
         // update state
         return {
           tweetIndex: newIndex
         }
       }
-    );
+    )
   }
-  render() {
+  render () {
     return (
       <div>
         <br />
-          <span className="intro">
+        <span className='intro'>
             Linux lessons from curated tweets
           </span>
-        <br/>
-        <a onClick={this.previousTweet} href="#">&lt;==</a>
+        <br />
+        <a onClick={this.previousTweet} href='#'>&lt;==</a>
         &nbsp;
-        <a onClick={this.nextTweet} href="#">==&gt;</a>
+        <a onClick={this.nextTweet} href='#'>==&gt;</a>
         <br />
         <span>({this.state.tweetIndex + 1}/{tweets.length})</span>
         <TweetEmbed id={App.getAllTweets()[this.state.tweetIndex]} />
@@ -89,4 +88,4 @@ class App extends React.Component {
 ReactDOM.render(
   <App />,
   document.getElementById('app')
-);
+)
