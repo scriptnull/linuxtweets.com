@@ -1,3 +1,7 @@
+// This is a modified version of https://github.com/capaj/react-tweet-embed
+// once https://github.com/capaj/react-tweet-embed/pull/20 is merged,
+// this file will be removed and npm module will be used instead
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
