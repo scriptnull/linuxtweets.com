@@ -4,7 +4,7 @@
   "description": "Linux lessons from curated tweets",
   "main": "index.js",
   "scripts": {
-    "pretest": "./node_modules/.bin/standard ./components/*.js",
+    "check-code-style": "./node_modules/.bin/standard ./components/*.js",
     "fix-code-style": "./node_modules/.bin/standard --fix ./components/*.js",
     "parcel": "./node_modules/.bin/parcel index.html",
     "production": "./node_modules/.bin/parcel build index.html --public-url ./ --out-dir docs",
