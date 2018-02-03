@@ -4,12 +4,15 @@ export default class Footer extends React.Component {
   constructor (props) {
     super(props)
     this.tips = [
-      {
-        message: <span>Built with &hearts; from the seats of BMTC</span>
-      },
-      {
-        message: <span>Use arrow keys to navigate</span>
-      }
+      <span>
+        Built with &hearts; from the seats of&nbsp;
+        <a className='white-text' target='_blank' href='https://en.wikipedia.org/wiki/Bangalore_Metropolitan_Transport_Corporation'>
+        BMTC
+        </a>
+      </span>,
+      <span>Use arrow keys to navigate the lessons</span>,
+      <span>Your progress is saved on your browser</span>,
+      <span>Next lesson loads automatically on every visit</span>
     ]
 
     this.state = {
@@ -36,7 +39,7 @@ export default class Footer extends React.Component {
   render () {
     return (
       <div className='footer'>
-        {this.tips[this.state.tipIndex] && this.tips[this.state.tipIndex].message}
+        {this.tips[this.state.tipIndex]}&nbsp;
       </div>
     )
   }
