@@ -8,7 +8,7 @@
     "fix-code-style": "./node_modules/.bin/standard --fix ./components/*.js",
     "parcel": "./node_modules/.bin/parcel index.html",
     "production": "./node_modules/.bin/parcel build index.html --public-url ./ --out-dir docs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/ava ./*/*.test.js"
   },
   "author": "",
   "license": "MIT",
@@ -18,10 +18,18 @@
     "react-tweet-embed": "^1.1.0",
     "underscore": "^1.8.3"
   },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
   "devDependencies": {
+    "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
     "http-server": "^0.11.1",
     "parcel-bundler": "^1.4.1",
     "standard": "^10.0.3"

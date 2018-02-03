@@ -3,7 +3,10 @@ import _ from 'underscore'
 export default class SequentialJsonDataSource {
   constructor (tweets, { storage, circular }) {
     if (!_.isArray(tweets)) {
-      throw new Error('Expecting tweets to be an array')
+      throw new TypeError('Expecting tweets to be an array')
+    }
+    if (_.isEmpty(tweets)) {
+      throw new Error('Expecting tweets to have atleast 1 tweet')
     }
     this.tweets = tweets
     this.minIndex = 0
@@ -21,9 +24,14 @@ export default class SequentialJsonDataSource {
     // use getters and setter to access this.dataIndex at all places
     this.dataIndex = 0
 
-    let tweetIndexLastAt = parseInt(window.localStorage.getItem('tweetIndexLastAt'))
+    let seed = 0
 
-    let seed = _.isFinite(tweetIndexLastAt) ? tweetIndexLastAt + 1 : 0
+    if (this.storage) {
+      let tweetIndexLastAt = parseInt(this.storage.getItem('tweetIndexLastAt'))
+      if (_.isFinite(tweetIndexLastAt)) {
+        seed = tweetIndexLastAt + 1
+      }
+    }
 
     this.setIndex(seed)
   }
