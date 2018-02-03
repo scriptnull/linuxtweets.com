@@ -47,23 +47,23 @@ A copy of the below checklist could be obtained from https://github.com/scriptnu
 - [x] Title
 - [x] Logo
 - [x] Badges
-- [ ] Description
-- [ ] Prerequisite for using software ( if any )
-- [ ] Install
-- [ ] Example Usage
+- [X] Description
+- [x] Prerequisite for using software ( if any )
+- [x] Install
+- [X] Example Usage
 - [ ] Screenshots and GIFs
     - For command line apps, try [asciinema](https://asciinema.org/)
     - For mac GUI screenshots, use [Cmd+Shift+3] or [Cmd+Shift+4] or [Cmd+Shift+4,SpaceBar]
     - For mac GUI GIF creation, try [kap](https://getkap.co/)
     - For Ubuntu GUI Screenshots, use [Shift+PrintScr] or [Shutter](http://shutter-project.org/)
     - For Ubuntu GUI GIF creation, try [silentcast](https://github.com/colinkeenan/silentcast)
-- [ ] Benchmarks
-- [ ] Contributors
-- [ ] Backers and Sponsors
-- [ ] Attributions ( mention 3rd party libs used etc. )
-- [ ] Security
-    - [ ] Post maintainer's PGP fingerprint for reporting security vulnerabilities
-    - [ ] Share [keybase](https://keybase.io/) profile for making the reporting process easier.
+- [x] Benchmarks
+- [x] Contributors
+- [x] Backers and Sponsors
+- [x] Attributions ( mention 3rd party libs used etc. )
+- [x] Security
+    - [x] Post maintainer's PGP fingerprint for reporting security vulnerabilities
+    - [x] Share [keybase](https://keybase.io/) profile for making the reporting process easier.
 
 ## Coding Phase
 - [x] Install required developer tools
@@ -73,7 +73,7 @@ A copy of the below checklist could be obtained from https://github.com/scriptnu
     - Build Tool
     - Other
 - [x] Basic code complete
-- [ ] Write tests and keep watch on code coverage
+- [x] Write tests and keep watch on code coverage
 - [x] Setup CI
     - [AppVeyor](https://www.appveyor.com/) - CI/CD for Windows developers.
     - [CircleCI](https://circleci.com/) - Docker-based building with support of customized workflows.
