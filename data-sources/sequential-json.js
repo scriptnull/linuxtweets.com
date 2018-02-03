@@ -37,11 +37,13 @@ export default class SequentialJsonDataSource {
   }
 
   setIndex (index) {
-    if (this.hasTweet(index)) {
-      this.dataIndex = index
-      if (this.storage) {
-        this.storage.setItem('tweetIndexLastAt', this.getIndex())
-      }
+    if (!this.hasTweet(index)) {
+      throw new Error('Out of Range Exception')
+    }
+
+    this.dataIndex = index
+    if (this.storage) {
+      this.storage.setItem('tweetIndexLastAt', this.getIndex())
     }
   }
 
@@ -70,16 +72,15 @@ export default class SequentialJsonDataSource {
 
     if (!this.hasTweet(prevIndex)) {
       if (!this.circular) {
-        // may be throw exception
-        return null
+        throw new Error('Out Of Bounds Exception')
       }
 
       this.setIndex(this.maxIndex)
+      return this.current()
     }
 
     this.setIndex(prevIndex)
-
-    return this.tweets[this.getIndex()]
+    return this.current()
   }
 
   next () {
@@ -87,16 +88,15 @@ export default class SequentialJsonDataSource {
 
     if (!this.hasTweet(nextIndex)) {
       if (!this.circular) {
-        // may be throw exception
-        return null
+        throw new Error('Out Of Bounds Exception')
       }
 
       this.setIndex(this.minIndex)
+      return this.current()
     }
 
     this.setIndex(nextIndex)
-
-    return this.tweets[this.getIndex()]
+    return this.current()
   }
 
   reset () {
