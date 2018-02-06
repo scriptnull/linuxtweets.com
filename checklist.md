@@ -35,7 +35,7 @@ A copy of the below checklist could be obtained from https://github.com/scriptnu
     - Bitbucket ( Free public and private repos )
 > https://github.com/scriptnull/linuxtweets.com
 
-- [ ] Create a README.md (check below for more)
+- [x] Create a README.md (check below for more)
 - [x] Create a LICENSE file (choose one before)
 - [x] Create a CODE_OF_CONDUCT.md
 - [x] Create a CONTRIBUTING.md
@@ -51,7 +51,7 @@ A copy of the below checklist could be obtained from https://github.com/scriptnu
 - [x] Prerequisite for using software ( if any )
 - [x] Install
 - [X] Example Usage
-- [ ] Screenshots and GIFs
+- [x] Screenshots and GIFs
     - For command line apps, try [asciinema](https://asciinema.org/)
     - For mac GUI screenshots, use [Cmd+Shift+3] or [Cmd+Shift+4] or [Cmd+Shift+4,SpaceBar]
     - For mac GUI GIF creation, try [kap](https://getkap.co/)
