@@ -56,6 +56,13 @@ class App extends React.Component {
         }
       }
     )
+
+    window.ga('send', {
+      hitType: 'event',
+      eventCategory: 'Tweet',
+      eventAction: 'previousTweet',
+      eventLabel: process.env.MODE === 'production' ? 'production' : 'dev'
+    })
   }
   nextTweet () {
     this.setState(
@@ -74,6 +81,13 @@ class App extends React.Component {
         }
       }
     )
+
+    window.ga('send', {
+      hitType: 'event',
+      eventCategory: 'Tweet',
+      eventAction: 'nextTweet',
+      eventLabel: process.env.MODE === 'production' ? 'production' : 'dev'
+    })
   }
   onKeyBoardShortcut (event) {
     switch (event.key) {
