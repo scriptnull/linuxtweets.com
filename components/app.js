@@ -115,7 +115,9 @@ class App extends React.Component {
           <a onClick={this.nextTweet} href='#'>==&gt;</a>
           <br />
           <span>({this.state.tweetNowAt}/{this.state.totalTweets})</span>
-          <TweetEmbed id={this.state.tweetId} options={this.state.tweetBoardOpts} />
+          <div className='center'>
+            <TweetEmbed id={this.state.tweetId} options={this.state.tweetBoardOpts} />
+          </div>
         </div>
         <Footer />
       </div>
